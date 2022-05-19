@@ -1,4 +1,5 @@
 import React from 'react';
+import './Navbar.css';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -23,13 +24,13 @@ const Navbar = () => {
                 <MenuIcon />
                 </IconButton>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                Car Rental
+                    <Link to="/" className="link-style">Car Rental</Link>
                 </Typography>
-                <Link to="/login">
-                    <Button sx={{color: 'white', textDecoration: 'none'}} color="inherit">Login</Button>
+                <Link to="/login" className="link-style" >
+                    <Button color="inherit">Login</Button>
                 </Link>
-                <Link to="/register">
-                    <Button sx={{color: 'white', textDecoration: 'none'}} color="inherit">Register</Button>
+                <Link to="/register" className="link-style" >
+                    <Button  color="inherit">Register</Button>
                 </Link>
             </Toolbar>
             </AppBar>

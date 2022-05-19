@@ -3,10 +3,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import { Link } from 'react-router-dom';
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
@@ -26,17 +23,17 @@ function Copyright(props) {
   );
 }
 
-const Login = () => {
-
+const Checkout = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         console.log({
           email: data.get('email'),
           password: data.get('password'),
+          phone: data.get('password'),
+          address: data.get('address')
         });
       };
-
     return (
         <>
         <Navbar></Navbar>
@@ -54,10 +51,20 @@ const Login = () => {
                 <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
-                Sign in
+                Shipping Details
             </Typography>
                 <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
                     <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="name"
+                    label="Full Name"
+                    name="name"
+                    autoComplete="name"
+                    autoFocus
+                    />
+                     <TextField
                     margin="normal"
                     required
                     fullWidth
@@ -67,40 +74,39 @@ const Login = () => {
                     autoComplete="email"
                     autoFocus
                     />
+
                     <TextField
                     margin="normal"
                     required
                     fullWidth
-                    name="password"
-                    label="Password"
-                    type="password"
-                    id="password"
-                    autoComplete="current-password"
+                    id="phone"
+                    label="Phone No"
+                    name="phone"
+                    autoComplete="phone"
+                    autoFocus
                     />
-                    <FormControlLabel
-                    control={<Checkbox value="remember" color="primary" />}
-                    label="Remember me"
+
+                    <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="address"
+                    label="Address"
+                    name="address"
+                    autoComplete="address"
+                    autoFocus
                     />
+                  
+                   
                     <Button
                     type="submit"
                     fullWidth
                     variant="contained"
                     sx={{ mt: 3, mb: 2 }}
                     >
-                    Sign In
+                    Make Order
                     </Button>
-                    <Grid container>
-                    <Grid item xs>
-                        <Link href="#" variant="body2">
-                        Forgot password?
-                        </Link>
-                    </Grid>
-                    <Grid item>
-                        <Link to="/register" variant="body2">
-                        {"Don't have an account? Sign Up"}
-                        </Link>
-                    </Grid>
-                    </Grid>
+                   
                 </Box>
             </Box>
             <Copyright sx={{ mt: 8, mb: 4 }} />
@@ -109,4 +115,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Checkout;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 const Car = () => {
     return (
         <>
@@ -21,7 +22,9 @@ const Car = () => {
                         </Typography>
                     </CardContent>
                     <CardActions sx={{display: 'flex', justifyContent: 'space-between' }}>
-                        <Button variant="contained" color="success">Buy Now</Button>
+                        <Link to="/checkout">
+                            <Button variant="contained" color="success">Buy Now</Button>
+                        </Link>
                         <Button variant="contained" color="primary">Details</Button>
                     </CardActions>
                     </Card>
@@ -93,7 +96,9 @@ const Car = () => {
                             </Typography>
                         </CardContent>
                         <CardActions sx={{display: 'flex', justifyContent: 'space-between' }}>
-                            <Button variant="contained" color="success">Buy Now</Button>
+                            <Link to="/checkout">
+                                <Button variant="contained" color="success">Buy Now</Button>
+                            </Link>
                             <Button variant="contained" color="primary">Details</Button>
                         </CardActions>
                         </Card>
