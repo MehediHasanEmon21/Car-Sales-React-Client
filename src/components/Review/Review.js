@@ -41,13 +41,13 @@ const Review = () => {
                                 <Box sx={{display: 'flex', justifyContent: 'center', paddingTop: '10px'}}>
                                     <Avatar
                                     alt="Remy Sharp"
-                                    src="https://preview.colorlib.com/theme/carbook/images/xperson_1.jpg.pagespeed.ic.a2MnMHMs44.webp"
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU"
                                     sx={{ width: 100, height: 100 }}
                                     />
                                 </Box>
                                 <CardContent>
                                 <Typography gutterBottom variant="h5" component="div">
-                                    Roger Scott
+                                    Sumer Monn
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
                                     Lizards are a widespread group of squamate reptiles, with over 6,000
@@ -60,7 +60,7 @@ const Review = () => {
                             <CardActions sx={{textAlign: 'center'}}>
                                 
                                 <Button size="small" color="primary">
-                                    UX Designer
+                                    Product Designer
                                 </Button>
                             </CardActions>
                         </Card>
@@ -72,13 +72,13 @@ const Review = () => {
                                 <Box sx={{display: 'flex', justifyContent: 'center', paddingTop: '10px'}}>
                                     <Avatar
                                     alt="Remy Sharp"
-                                    src="https://preview.colorlib.com/theme/carbook/images/xperson_1.jpg.pagespeed.ic.a2MnMHMs44.webp"
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqZZYSsnncqDhroX4Ud9rgHCxpDeyLSN5PdG71BuDAk-ulL4CQCFtjL4lKVH26UIW9EOo&usqp=CAU"
                                     sx={{ width: 100, height: 100 }}
                                     />
                                 </Box>
                                 <CardContent>
                                 <Typography gutterBottom variant="h5" component="div">
-                                    Roger Scott
+                                    Shane Pay
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
                                     Lizards are a widespread group of squamate reptiles, with over 6,000
@@ -91,7 +91,7 @@ const Review = () => {
                             <CardActions sx={{textAlign: 'center'}}>
                                 
                                 <Button size="small" color="primary">
-                                    UX Designer
+                                    Software Engineer
                                 </Button>
                             </CardActions>
                         </Card>

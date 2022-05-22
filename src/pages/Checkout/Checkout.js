@@ -9,30 +9,37 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Navbar from '../../components/Navbar/Navbar';
+import useAuth from '../../hooks/useAuth';
+import { useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+
 
 const Checkout = () => {
+  const {user} = useAuth();
+  const { id } = useParams();
+  const history = useHistory();
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        console.log({
+        const axiosData = {
+          name: data.get('name'),
+          car_id: id,
           email: data.get('email'),
-          password: data.get('password'),
-          phone: data.get('password'),
+          phone: data.get('phone'),
           address: data.get('address')
-        });
+        };
+        axios.post('http://localhost:5000/order-add',axiosData)
+        .then(({data}) => {
+            if(data.acknowledged){
+                history.push('/order-done')
+            }else{
+                alert('something went wrong');
+            }
+            
+        })
+        .catch(err => console.log(err))
       };
     return (
         <>
@@ -73,6 +80,7 @@ const Checkout = () => {
                     name="email"
                     autoComplete="email"
                     autoFocus
+                    value={user.email}
                     />
 
                     <TextField
@@ -109,7 +117,6 @@ const Checkout = () => {
                    
                 </Box>
             </Box>
-            <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
         </>
     );

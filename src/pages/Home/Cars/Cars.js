@@ -1,9 +1,17 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import Car from '../../../components/Car/Car';
 
+
 const Cars = () => {
+    const [cars, setCars] = useState([]);
+    useEffect(() => {
+        axios.get('http://localhost:5000/car-short')
+        .then(({data}) => setCars(data))
+        .catch(err => console.log(err))
+    },[])
     return (
         <div>
             <Container>
@@ -18,7 +26,7 @@ const Cars = () => {
     
                 <Grid container spacing={2}>
 
-                    <Car></Car>
+                   {cars.map((car) => <Car car={car} key={car._id}></Car>)}
                 
                 </Grid>
             </Container>

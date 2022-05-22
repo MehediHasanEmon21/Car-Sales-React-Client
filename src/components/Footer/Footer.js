@@ -64,7 +64,7 @@ const Footer = () => {
 
                 <Box>
                     <Typography variant="h6" sx={{marginTop: '50px',textAlign: 'center', fontSize: '13px'}}>
-                        Copyright ©2022 All rights reserved | This template is made with  by Colorlib
+                        Copyright ©2022 All rights reserved | This template is made with  by Emon
                     </Typography>
                 </Box>
                 
